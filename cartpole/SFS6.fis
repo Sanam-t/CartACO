@@ -1,0 +1,33 @@
+[System]
+Name='SFS6'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='D'
+Range=[-1 1]
+NumMFs=3
+MF1='D11':'trimf',[-2 -1 0]
+MF2='D12':'trimf',[-1 0 1]
+MF3='D13':'trimf',[0 1 2]
+
+[Output1]
+Name='outSFS6'
+Range=[-1 1]
+NumMFs=3
+MF1='Delta6':'constant',[1]
+MF2='zero':'constant',[0]
+MF3='phi6':'constant',[0.5]
+
+[Rules]
+1, 1 (1) : 1
+2, 3 (1) : 1
+3, 2 (1) : 1

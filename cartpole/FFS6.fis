@@ -1,0 +1,33 @@
+[System]
+Name='FFS6'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='S'
+Range=[-1 1]
+NumMFs=3
+MF1='S11':'trapmf',[-3 -2 -1 0]
+MF2='S12':'trimf',[-1 0 1]
+MF3='S13':'trapmf',[0 1 2 3]
+
+[Output1]
+Name='outFFS6'
+Range=[-1 1]
+NumMFs=3
+MF1='alfa6':'constant',[-1]
+MF2='zero':'constant',[0]
+MF3='beta6':'constant',[1]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
